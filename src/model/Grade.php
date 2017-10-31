@@ -8,13 +8,13 @@
 
 class Grade
 {
-    private $id;
-    private $value;
-    private $userId;
-    private $subjectId;
-    private $comment;
-    private $weight;
-    private $isCertificateRelevant;
+    private $id; //integer
+    private $value; //double
+    private $userId; //integer
+    private $subjectId; //integer
+    private $comment; //string
+    private $weight; //integer
+    private $isCertificateRelevant; //boolean
 
     /**
      * Grade constructor.
@@ -44,15 +44,6 @@ class Grade
     {
         return $this->id;
     }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
     /**
      * @return mixed
      */
