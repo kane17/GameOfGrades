@@ -8,10 +8,18 @@
 
 class Certificate {
 
-    var $id;
-    var $path;
-    var $title;
-    var $userId;
+    private $id; //integer
+    private $path; //string
+    private $title; //string
+    private $userId; //integer
+
+
+    public function __construct($idP, $pathP, $titleP, $userIdP){
+        $this->id = $idP;
+        $this->path = $pathP;
+        $this->title = $titleP;
+        $this->userId = $userIdP;
+    }
 
     /**
      * @return mixed
@@ -35,14 +43,6 @@ class Certificate {
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     /**
