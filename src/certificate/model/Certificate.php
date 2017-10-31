@@ -6,7 +6,9 @@
  * Time: 10:03
  */
 
+class Certificate {
 
-
+}
 
 ?>
+

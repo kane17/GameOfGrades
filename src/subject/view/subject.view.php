@@ -3,10 +3,5 @@
  * Created by PhpStorm.
  * User: vmadmin
  * Date: 31.10.2017
- * Time: 10:12
+ * Time: 10:40
  */
-
-class grade
-{
-
-}
