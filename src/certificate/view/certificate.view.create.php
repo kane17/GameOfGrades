@@ -15,8 +15,12 @@
 </head>
 <body>
 <h1>Notentool</h1>
-<h4>Zeugnisse verwalten</h4>
+<h4>Zeugnis hochladen</h4>
 <div class="container">
+    <div class="row">
+        <a href="certificate.view.overview.php" role="button" class="btn btn-primary">Übersicht</a>
+    </div>
+    <br>
     <div class="row">
         <form method="post" action="./formaction.php" id="uploadForm" enctype="multipart/form-data">
             <div class="form-group">

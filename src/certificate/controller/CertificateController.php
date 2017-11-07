@@ -7,8 +7,8 @@
  */
 
 require "../../model/Certificate.php";
-$user = include "../../model/User.php";
-$certificateDB  = include "../../database/database-interface/CertificateDatabase.php";
+require "../../model/User.php";
+require "../../database/database-interface/CertificateDatabase.php";
 
 class CertificateController
 {
@@ -27,13 +27,23 @@ class CertificateController
             $title = $_POST['title'];
             if ($_FILES['uploadCertificate']){
                 $file = $_FILES['uploadCertificate'];
-                //TODO: create directory for each user
-                $destination = '../files/'.$file['name'];
+                //TODO: read username from session for directory name
+                $relPath = '../files/benutzer';
+                if (!file_exists($relPath)) {
+                    mkdir($relPath, 0777, true);
+                }
+                $destination = $relPath.'/'.$file['name'];
                 move_uploaded_file($file['tmp_name'], $destination);
                 $certificate = new Certificate(null, $destination, $title, 1);
-
+                //TODO: save in db
+                $this->console_log($certificate);
+                header('Location: certificate.view.overview.php');
             }
         }
+    }
+
+    public function getCertificates(){
+
     }
 
     function console_log( $data ){
