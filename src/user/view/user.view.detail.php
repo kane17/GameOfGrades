@@ -14,7 +14,7 @@ include ("../../model/User.php")
 <h1>Notentool</h1>
 <h4>Benutzer Detail</h4>
 <?php
-//user Dummydaten
+//user Dummydaten ersetzen durch POST übergabe von user.view.php
 $user = new User(2,"Reber","Reto","1234","tester@test.ch",false,4.3,5.3,1);
 echo "<table class='table'>
 <tr>
