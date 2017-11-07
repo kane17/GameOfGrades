@@ -17,7 +17,8 @@ include ("../../model/User.php")
 //user und user2 Dummydaten
 $user = new User(1,"Reber","Remo","1234","test@test.ch",true,null,null,null);
 $user2 = new User(2,"Reber","Reto","1234","tester@test.ch",false,4.3,5.3,1);
-$userList = array($user, $user2);//Replace Array mit DB Aufruf
+//Replace Array mit DB Aufruf
+$userList = array($user, $user2);
 echo "<table class='table'>
     <tr>
         <th>ID</th>
