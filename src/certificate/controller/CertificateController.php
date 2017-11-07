@@ -19,9 +19,16 @@ class CertificateController
 //
 //    }
 
-    public function submitForm(){
+    public function handleSubmit(){
         $this->console_log($_POST);
         $this->console_log($_FILES);
+        if ($_POST['submit']){
+            $fileName = $_POST['fileName'];
+            if ($_FILES['uploadCertificate']){
+                $file = $_FILES['uploadCertificate'];
+                move_uploaded_file($file['tmp_name'], '../files/'.$file['name']);
+            }
+        }
     }
 
     function console_log( $data ){
@@ -29,9 +36,5 @@ class CertificateController
         echo 'console.log('. json_encode( $data ) .')';
         echo '</script>';
     }
-
-
-
-//    $certificates =
 
 }
