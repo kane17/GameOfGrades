@@ -10,4 +10,5 @@ interface CertificateDatabase
 {
     function getCertificatesOfUser($username);
     function getCertificatesForCoach($username);
+    function create($certificate);
 }

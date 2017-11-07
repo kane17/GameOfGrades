@@ -21,7 +21,7 @@
         <form method="post" action="./formaction.php" id="uploadForm" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="fileName">Titel</label>
-                <input type="text" class="form-control" id="fileName" name="fileName">
+                <input type="text" class="form-control" id="title" name="title">
             </div>
             <div class="form-group">
                 <label for="uploadCertificate">Zeugnis auswählen</label>
