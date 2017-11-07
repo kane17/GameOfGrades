@@ -28,7 +28,7 @@ echo "<table class='table'>
         <th>E-Mail</th>
         <th>Ist Coach</th>
         <th>Schlechte Noten ab</th>
-        <th>Gute Noten Ab</th>
+        <th>Gute Noten ab</th>
         <th>ID Coach</th>
 </tr>";
 foreach ($userList as $us ){
