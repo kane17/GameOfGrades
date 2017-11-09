@@ -8,11 +8,9 @@
 
 interface GradeDatabase
 {
-    function getGradeOfUser($username);
-    function getSubjectsOfUser($username);
+    function getGradesOfUser($username);
     function create($grade);
     function update($grade);
     function delete($grade);
-    function getUser($id);
     function getGradesOfCoach($coachId);
 }
