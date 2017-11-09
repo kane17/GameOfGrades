@@ -127,7 +127,7 @@ class Grade
     /**
      * @return mixed
      */
-    public function getisCertificateRelevant()
+    public function isCertificateRelevant()
     {
         return $this->isCertificateRelevant;
     }
