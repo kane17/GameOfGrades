@@ -36,7 +36,7 @@ switch ($param){
         break;
     case "logout":
         $_SESSION['user'] = null;
-        header("Location:gameofgrades.php?param=home");
+        header("Location:index.php?param=home");
         break;
     default:
         build("dispatcherror.php");

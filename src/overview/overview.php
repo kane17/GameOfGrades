@@ -12,6 +12,6 @@
 
 <div class="container">
     <div class="row">
-        <p>Bitte <a href="./gameofgrades.php?param=login">hier</a> einloggen</p>
+        <p>Bitte <a href="./index.php?param=login">hier</a> einloggen</p>
     </div>
 </div>

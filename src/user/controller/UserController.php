@@ -9,4 +9,18 @@
 class UserController
 {
 
+    public function login()
+    {
+        $this->console_log($_POST);
+    }
+
+
+    function console_log( $data )
+    {
+        echo '<script>';
+        echo 'console.log('. json_encode( $data ) .')';
+        echo '</script>';
+    }
+
+
 }
