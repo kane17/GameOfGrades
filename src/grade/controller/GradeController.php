@@ -8,6 +8,8 @@
 
 require '../../database/database-impl/GradeDB.php';
 
+session_start();
+
 
 class GradeController
 {

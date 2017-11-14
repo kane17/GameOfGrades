@@ -6,8 +6,8 @@
  * Time: 10:53
  */
 include_once ("AbstractDatabase.php");
-include_once ("database-interface/GradeDatabase.php");
-include_once ("../model/Grade.php");
+include_once "C:\dev\Projekte\GameOfGrades\src\database\database-interface\GradeDatabase.php";
+include_once ("../../model/Grade.php");
 class GradeDB extends AbstractDatabase implements GradeDatabase {
 
     public function __construct()
@@ -55,7 +55,8 @@ class GradeDB extends AbstractDatabase implements GradeDatabase {
         return $this->createGradesOfResult($result);
     }
 
-    private function createGradesOfResult($result){
+    private function createGradesOfResult($result)
+    {
         $grades = array();
         while ($row = $result->fetch_assoc()){
             $grade = new Grade($row['ID'], $row['VALUE'], $row['userID'], $row['subjectID'], $row['COMMENT'], $row['WEIGHT'], $row['REPORT']);

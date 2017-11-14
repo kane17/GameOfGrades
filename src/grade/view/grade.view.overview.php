@@ -12,11 +12,7 @@ $controller = new GradeController();
 
 
 ?>
-<head>
-    <link rel="stylesheet" href="/bootstrap/bootstrap-4.0.0-beta.2-dist/css/bootstrap.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
+
     <h2>Noten Übersicht</h2>
     <div class="container">
         <div class="row">
@@ -39,10 +35,10 @@ $controller = new GradeController();
                     <td><?php echo $grade->getDescription(); ?></td>
                     <td>
                         <a href="grade.view.edit.php">
-                            <i class="material-icons">mode edit</i>
+                            <i class="material-icons">mode_edit</i>
                         </a>
                         <a href="grade.view.detail.php">
-                            <i class="material-icons">mode edit</i>
+                            <i class="material-icons">mode_edit</i>
                         </a>
                         <a href="<?php $controller->deleteGrade(); ?>">
                             <i class="material-icons">delete</i>
@@ -53,5 +49,3 @@ $controller = new GradeController();
             </tbody>
         </table>
     </div>
-</body>
-<script href="/bootstrap/bootstrap-4.0.0-beta.2-dist/js/bootstrap.js"></script>
