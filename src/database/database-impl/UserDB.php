@@ -6,8 +6,8 @@
  * Time: 11:07
  */
 include_once ("AbstractDatabase.php");
-include_once ("database-interface/UserDatabase.php");
-include_once ("../model/User.php");
+include_once (__DIR__."/../database-interface/UserDatabase.php");
+include_once (__DIR__."/../../model/User.php");
 class UserDB extends AbstractDatabase implements UserDatabase{
 
     function getAllUsers()

@@ -45,7 +45,6 @@ switch ($param){
 //        // resetting userdata session variable for logout
 //        $_SESSION['userdata'] = null;
 //        /* setting success message for logout
-//         * TODO: create own page for functions of logout for mvc reasons
 //         */
 //        $_SESSION['message'] = "Du hast dich erfolgreich ausgeloggt";
 //        header("Location:logbuch.php?param=message");
