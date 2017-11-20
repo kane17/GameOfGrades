@@ -6,8 +6,8 @@
  * Time: 10:53
  */
 include_once ("AbstractDatabase.php");
-include_once "C:\dev\Projekte\GameOfGrades\src\database\database-interface\GradeDatabase.php";
-include_once ("../../model/Grade.php");
+include_once (__DIR__."/../database-interface/GradeDatabase.php");
+include_once (__DIR__."/../../model/Grade.php");
 class GradeDB extends AbstractDatabase implements GradeDatabase {
 
     public function __construct()

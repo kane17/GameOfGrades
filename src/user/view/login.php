@@ -20,7 +20,7 @@
         </div>
         <div class="form-group">
             <label for="password">Passwort</label>
-            <input type="text" id="password" name="password" class="form-control" placeholder="Passwort">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Passwort">
         </div>
         <div class="form-group">
             <button type="submit" name="submit" id="submit">Einloggen</button>

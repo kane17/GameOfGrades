@@ -6,17 +6,16 @@
  * Time: 10:35
  */
 
-require_once '../controller/GradeController.php';
+require_once __DIR__.'/../controller/GradeController.php';
 
 $controller = new GradeController();
-
 
 ?>
 
     <h2>Noten Übersicht</h2>
     <div class="container">
         <div class="row">
-            <button>Note erfassen</button>
+            <a href="./index.php?param=newGrade"><button>Note erfassen</button></a>
         </div>
         <table class="table table-striped">
             <thead>

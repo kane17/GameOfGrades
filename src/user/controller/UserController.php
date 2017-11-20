@@ -22,7 +22,7 @@ class UserController
             if ($user != null) {
                 $this->console_log($user);
                 sleep(2);
-                $_SESSION['user'] = true;
+                $_SESSION['user'] = array();
                 $_SESSION['user']['id'] = $user->getId();
                 $_SESSION['user']['name'] = $user->getUsername();
                 header('Location:/src/index.php?param=home');

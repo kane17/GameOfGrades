@@ -6,9 +6,8 @@
  * Time: 10:35
  */
 
-require '../../database/database-impl/GradeDB.php';
-
-session_start();
+require __DIR__.'/../../database/database-impl/GradeDB.php';
+require __DIR__.'/../../database/database-impl/SubjectDB.php';
 
 
 class GradeController
@@ -27,7 +26,7 @@ class GradeController
 
     public function getGrades() {
         $gradeDB = new GradeDB();
-        return $gradeDB->getGradesOfUser($_SESSION['username']);
+        return $gradeDB->getGradesOfUser($_SESSION['user']['name']);
     }
 
     public function deleteGrade() {
@@ -35,7 +34,8 @@ class GradeController
     }
 
     public function getSubjects() {
-
+        $subjectDB = new SubjectDB();
+        return $subjectDB->getSubjectsOfUser($_SESSION['user']['name']);
     }
 
 

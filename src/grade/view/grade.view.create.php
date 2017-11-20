@@ -5,7 +5,7 @@
  * Date: 31.10.2017
  * Time: 10:57
  */
-require_once '../controller/GradeController.php';
+require_once __DIR__.'/../controller/GradeController.php';
 
 $controller = new GradeController();
 

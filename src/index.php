@@ -22,9 +22,6 @@ $param = $_GET['param'];
 
 // extendable, with as many pages as you want;
 switch ($param){
-//    case "login":
-//        build("pages/logbuch_login.php");
-//        break;
     case "login":
         build("user/view/login.php");
         break;
@@ -38,26 +35,12 @@ switch ($param){
         $_SESSION['user'] = null;
         header("Location:index.php?param=home");
         break;
+    case "newGrade":
+        build("grade/view/grade.view.create.php");
+        break;
     default:
         build("dispatcherror.php");
         break;
-//    case "logout":
-//        // resetting userdata session variable for logout
-//        $_SESSION['userdata'] = null;
-//        /* setting success message for logout
-//         */
-//        $_SESSION['message'] = "Du hast dich erfolgreich ausgeloggt";
-//        header("Location:logbuch.php?param=message");
-//        break;
-//    case "newPost":
-//        build("pages/logbuch_newPost.php");
-//        break;
-//    case "message":
-//        build("pages/logbuch_message.php");
-//        break;
-//    default:
-//        // on default build overview
-//        build("pages/logbuch_overview.php");
 }
 
 ?>
