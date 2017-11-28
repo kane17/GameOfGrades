@@ -14,10 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit();
 }
 ?>
-<head>
-    <link rel="stylesheet" href="/bootstrap/bootstrap-4.0.0-beta.2-dist/css/bootstrap.css">
-</head>
-<body>
 <h2>Note erfassen</h2>
 <div class="container">
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
@@ -30,8 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <?php echo $subject->getName(); ?>
                     </option>
                 <?php } ?>
+
             </select>
         </div>
+<!--        --><?php //echo json_encode($controller->getSubjects()); ?>
         <div class="form-group row">
             <label for="value" class="col-6">Note</label>
             <input type="number" max="6" min="1" id="value" name="value" class="form-control col-6"/>
@@ -50,5 +48,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </form>
 </div>
-</body>
-<script href="/bootstrap/bootstrap-4.0.0-beta.2-dist/js/bootstrap.js"></script>

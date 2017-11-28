@@ -6,8 +6,8 @@
  * Time: 11:06
  */
 include_once ("AbstractDatabase.php");
-include_once ("database-interface/SubjectDatabase.php");
-include_once ("../model/Subject.php");
+include_once (__DIR__."/../database-interface/SubjectDatabase.php");
+include_once (__DIR__."/../../model/Subject.php");
 class SubjectDB extends AbstractDatabase implements SubjectDatabase{
 
     function getAllSubjects()
@@ -25,7 +25,8 @@ class SubjectDB extends AbstractDatabase implements SubjectDatabase{
         $stmt->execute();
     }
 
-    function removeSubjectFromUser($username, $subject){
+    function removeSubjectFromUser($username, $subject)
+    {
         $stmt = $this->connection->prepare("delete from subjectconfig where userId = (select ID from users where USERNAME = ?) and subjectId = ?");
         $stmt->bind_param("si", $username, $subject->getId());
         $stmt->execute();
@@ -43,7 +44,8 @@ class SubjectDB extends AbstractDatabase implements SubjectDatabase{
         }
     }
 
-    private function removeAllSubjectConfigFromUser($username){
+    private function removeAllSubjectConfigFromUser($username)
+    {
         $stmt = $this->connection->prepare("delete from subjectconfig where userId = (select ID from users where USERNAME = ?)");
         $stmt->bind_param("s", $username);
         $stmt->execute();
@@ -66,7 +68,7 @@ class SubjectDB extends AbstractDatabase implements SubjectDatabase{
         foreach($subjectConfigs as $conf){
             if($conf->semester == $actualSemester){
                 array_push($subjectsOfSemester, $this->getSubjectById($conf->id));
-            }else{
+            } else {
                 array_push($subjects, $subjectsOfSemester);
                 $actualSemester++;
                 $subjectsOfSemester = array();
@@ -77,14 +79,17 @@ class SubjectDB extends AbstractDatabase implements SubjectDatabase{
         return $subjects;
     }
 
-    private function getSubjectById($id){
+    private function getSubjectById($id)
+    {
         $stmt = $this->connection->prepare("select * from subject where ID = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
         $result = $stmt->get_result();
         return $this->createSubjectsOfResult($result)[0];
     }
-    private function createSubjectsOfResult($result){
+
+    private function createSubjectsOfResult($result)
+    {
         $subjects = array();
         while ($row = $result->fetch_assoc()){
             $subject = new Subject($row['ID'], $row['NAME']);
