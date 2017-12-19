@@ -53,4 +53,14 @@ class GradeController
         echo '</script>';
     }
 
+    public function getSubjectNameById($givenSubId){
+        $subjectDB = new SubjectDB();
+        $subjects = $subjectDB->getAllSubjects();
+        foreach ($subjects as $subject){
+            if ($givenSubId == $subject->getId()){
+                return $subject->getName();
+            }
+        }
+    }
+
 }
