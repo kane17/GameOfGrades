@@ -27,7 +27,13 @@ class GradeDB extends AbstractDatabase implements GradeDatabase {
     function create($grade)
     {
         $stmt = $this->connection->prepare("insert into grade (VALUE, userID, subjectID, COMMENT, WEIGHT, REPORT) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("diisii", $grade->getValue(), $grade->getUserId(), $grade->getSubjectId(), $grade->getComment(), $grade->getWeight(), $grade->isCertificateRelevant());
+        $value = $grade->getValue();
+        $userid = $grade->getUserId();
+        $subjectid = $grade->getSubjectId();
+        $comment = $grade->getComment();
+        $weight = $grade->getWeight();
+        $isCertificateRelevant = $grade->isCertificateRelevant();
+        $stmt->bind_param("diisii", $value, $userid, $subjectid, $comment, $weight, $isCertificateRelevant);
         $stmt->execute();
     }
 

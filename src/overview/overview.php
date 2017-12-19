@@ -6,7 +6,7 @@
  * Time: 10:43
  */
 
-echo json_encode($_SESSION);
+//echo json_encode($_SESSION);
 
 ?>
 
@@ -14,7 +14,7 @@ echo json_encode($_SESSION);
 
 <div class="container">
     <div class="row">
-        <?php if ($_SESSION['user']['id'] == null) {?>
+        <?php if (!isset($_SESSION['user'])) {?>
             <p>Bitte <a href="./index.php?param=login">hier</a> einloggen</p>
         <?php } else { ?>
             <p><a href="./index.php?param=grades">Noten</a></p>

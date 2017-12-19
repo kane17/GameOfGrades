@@ -14,11 +14,12 @@ class GradeController
 {
     public function createGrade() {
         $gradeDB = new GradeDB();
+        $this->console_log("thing");
         if ($_POST['subject'] != null && $_POST['value'] != null && $_POST['weight'] != null && $_POST['description'] != null){
-            $grade = new Grade(null, $_POST['value'], $_SESSION['user']['id'], $_POST['subject']['id'], $_POST['description'], $_POST['weight'], 0);
+            $grade = new Grade(null, $_POST['value'], $_SESSION['user']['id'], $_POST['subject'], $_POST['description'], $_POST['weight'], 0);
             $this->console_log($grade);
-            sleep(2);
             $gradeDB->create($grade);
+            header('Location:index.php?param=grades');
         } else {
             sleep(2);
         }

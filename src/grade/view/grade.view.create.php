@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <h2>Note erfassen</h2>
 <div class="container">
-    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF'].'?param=newGrade' ?>" method="post">
         <div class="form-group row">
             <label for="subject" class="col-6">Fach</label>
             <select id="subject" name="subject" class="form-control col-6">
@@ -26,13 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <?php echo $subject->getName(); ?>
                     </option>
                 <?php } ?>
-
             </select>
         </div>
-<!--        --><?php //echo json_encode($controller->getSubjects()); ?>
         <div class="form-group row">
             <label for="value" class="col-6">Note</label>
-            <input type="number" max="6" min="1" id="value" name="value" class="form-control col-6"/>
+            <input type="text" id="value" name="value" class="form-control col-6"/>
         </div>
         <div class="form-group row">
             <label for="weight" class="col-6">Gewichtung</label>
