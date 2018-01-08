@@ -39,7 +39,7 @@ $controller = new GradeController();
 <!--                        <a href="grade.view.detail.php">-->
 <!--                            <i class="material-icons">mode_edit</i>-->
 <!--                        </a>-->
-                        <a href="<?php $controller->deleteGrade(); ?>">
+                        <a href="index.php?param=deleteGrade&gradeID=<?php echo $grade->getId(); ?>">
                             <i class="material-icons">delete</i>
                         </a>
                     </td>

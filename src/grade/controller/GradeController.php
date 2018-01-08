@@ -26,11 +26,36 @@ class GradeController
     }
 
     public function editGrade() {
-
+        $gradeDB = new GradeDB();
+        if ($_POST['subject'] != null && $_POST['value'] != null && $_POST['weight'] != null && $_POST['description'] != null){
+            $grade = new Grade(null, $_POST['value'], $_SESSION['user']['id'], $_POST['subject'], $_POST['description'], $_POST['weight'], 0);
+            $this->console_log($grade);
+            $gradeDB->update($grade);
+            header('Location:index.php?param=grades');
+        }
     }
 
     public function getGrade() {
+//        $gradeDB = new GradeDB();
+//        if ($_POST['gradeID'] != null){
+//            foreach ($this->getGrades() as $grade){
+//                if ($grade['id'] == $_POST['gradeID']){
+//                    return $grade;
+//                }
+//            }
+//        }
 
+    }
+
+    public function getGradeById($id){
+//        $gradeDB = new GradeDB();
+        if ($id != null) {
+            foreach ($this->getGrades() as $grade) {
+                if ($grade->getId() == $id) {
+                    return $grade;
+                }
+            }
+        }
     }
 
     public function getGrades() {
@@ -38,8 +63,12 @@ class GradeController
         return $gradeDB->getGradesOfUser($_SESSION['user']['name']);
     }
 
-    public function deleteGrade() {
-
+    public function deleteGrade($grade) {
+        $gradeDB = new GradeDB();
+        if ($grade != null) {
+            $gradeDB->delete($grade);
+            header('Location: index.php?param=grades');
+        }
     }
 
     public function getSubjects() {

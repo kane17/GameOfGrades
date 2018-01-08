@@ -6,8 +6,10 @@
  * Time: 10:57
  */
 require_once __DIR__.'/../controller/GradeController.php';
+require_once __DIR__.'/../../subject/controller/SubjectController.php';
 
 $controller = new GradeController();
+$subjectController = new SubjectController();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $controller->createGrade();

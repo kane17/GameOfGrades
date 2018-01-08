@@ -9,6 +9,9 @@
 
 //dispatcher
 
+
+require_once __DIR__.'/grade/controller/GradeController.php';
+
 session_start();
 
 include "builder.php";
@@ -38,6 +41,17 @@ switch ($param){
     case "newGrade":
         build("grade/view/grade.view.create.php");
         break;
+    case "editGrade":
+        build("grade/view/grade.view.edit.php");
+        break;
+    case "deleteGrade":
+        if ($_GET['gradeID'] != null){
+            $gradeController = new GradeController();
+            $gradeController->deleteGrade($gradeController->getGradeById($_GET['gradeID']));
+            header('Location: index.php?param=grades');
+        } else {
+            sleep(2);
+        }
     default:
         build("dispatcherror.php");
         break;
